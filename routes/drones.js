@@ -31,14 +31,27 @@ router.post("/create", async (req, res, next) => {
   }
 });
 
-router.get("/:id/edit", (req, res, next) => {
-  // Iteration #4: Update the drone
-  // ... your code here
+router.get("/:id/edit", async (req, res, next) => {
+  try {
+    const droneInfo = await Drone.findById(req.params.id)
+    console.log(droneInfo)
+    res.render("drones/update-form.hbs", droneInfo)
+  } catch (err) {
+    next(err)
+  }
 });
 
-router.post("/:id/edit", (req, res, next) => {
-  // Iteration #4: Update the drone
-  // ... your code here
+router.post("/:id/edit", async (req, res, next) => {
+ try {
+   await Drone.findByIdAndUpdate(req.params.id, {
+    name: req.body.name,
+    propellers: req.body.propellers,
+    maxSpeed: req.body.maxSpeed
+  })
+  res.redirect("/drones")
+ } catch (err) {
+  next(err)
+ }
 });
 
 router.post("/:id/delete", (req, res, next) => {
