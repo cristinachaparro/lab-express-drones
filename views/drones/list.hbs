@@ -7,7 +7,8 @@
         <p> {{this.name}} </p>
         <p> {{this.propellers}} </p>
         <p> {{this.maxSpeed}} </p>
-        <a href="/drones/{{this._id}}/edit">Editar</a>
+        <a href="/drones/{{this._id}}/edit"><button>Editar</button></a>
+        <form action="/drones/{{this._id}}/delete" method="post"><button>Borrar</button></form>
     </li>
     {{/each}}
   </ul>
