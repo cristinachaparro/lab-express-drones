@@ -10,7 +10,7 @@ const Drone = require("../models/Drone.model.js");
 
 async function insertData() {
   try {
-    const response = await Drone.insertMany(drones);
+    await Drone.insertMany(drones);
   } catch (error) {
     console.log(error);
   }
