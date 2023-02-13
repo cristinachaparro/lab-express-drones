@@ -1,4 +1,10 @@
 body {
+  background-position: center;
+  background-image: url("../images/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f75706c6f61645f393236653735643435663261393937313.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
   font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
   margin: 0px;
 }
@@ -8,7 +14,6 @@ a {
 }
 
 nav {
-  background-color: cadetblue;
   padding: 60px;
   text-align: center;
 }
@@ -36,11 +41,32 @@ nav a {
 }
 
 #elements {
+  background-color: white;
+  border-radius: 1rem;
   display: flex;
   padding: 18px;
+  margin: 1rem;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   width: 800px;
+}
+
+.info {
+  display: flex;
+  flex-direction: row;
+}
+
+.list-buttons {
+  display: flex;
+  flex-direction: row;
+}
+
+#elements button {
+  color: white;
+  border: none;
+  background-color: rgb(211, 168, 153);
+  padding: 1rem;
+  border-radius: 1rem;
 }
 
 #list li {
@@ -55,4 +81,19 @@ nav a {
 button {
   margin: 8px;
   padding: 6px;
+}
+
+/* Index.hbs */
+.home {
+  font-size: 2em;
+  color: white;
+  padding-top: 18.76px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  text-align: center;
+  margin-top: 0px;
+}
+
+.anchors a {
+  text-decoration: none;
+  font-size: 2rem;
 }
