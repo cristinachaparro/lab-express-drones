@@ -1,8 +1,58 @@
 body {
-  padding: 50px;
   font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
+  margin: 0px;
 }
 
 a {
-  color: #00b7ff;
+  color: white;
+}
+
+nav {
+  background-color: cadetblue;
+  padding: 60px;
+  text-align: center;
+}
+
+nav a {
+  padding: 24px;
+  color: white;
+}
+
+#container {
+  padding: 28px;
+}
+
+#container h2 {
+  width: 100%;
+  text-align: center;
+}
+
+
+#list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#elements {
+  display: flex;
+  padding: 18px;
+  align-items: center;
+  justify-content: center;
+  width: 800px;
+}
+
+#list li {
+  list-style: none;
+  padding: 8px;
+}
+
+#list span {
+  font-weight: bold;
+}
+
+button {
+  margin: 8px;
+  padding: 6px;
 }
