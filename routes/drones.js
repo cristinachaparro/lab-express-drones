@@ -1,39 +1,47 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
 
-const Drone = require("../models/Drone.model.js")
+const Drone = require("../models/Drone.model.js");
 // GET "/drones" => render a drone list
-router.get('/drones', async (req, res, next) => {
+router.get("/", async (req, res, next) => {
   try {
-    const droneList = await Drone.find()
-    console.log(droneList)
-    res.render("drones/list.hbs", {droneList})
+    const droneList = await Drone.find();
+    console.log(droneList);
+    res.render("drones/list.hbs", { droneList });
   } catch (err) {
-    next(err)
+    next(err);
   }
 });
 
-router.get('/drones/create', (req, res, next) => {
-  // Iteration #3: Add a new drone
-  // ... your code here
+router.get("/create", (req, res, next) => {
+  res.render("drones/create-form.hbs");
 });
 
-router.post('/drones/create', (req, res, next) => {
-  // Iteration #3: Add a new drone
-  // ... your code here
+router.post("/create", async (req, res, next) => {
+  try {
+    console.log(req.body);
+    await Drone.create({
+      name: req.body.name,
+      propellers: req.body.propellers,
+      maxSpeed: req.body.maxSpeed,
+    });
+    res.redirect("/drones");
+  } catch (error) {
+    next(error);
+  }
 });
 
-router.get('/drones/:id/edit', (req, res, next) => {
+router.get("/:id/edit", (req, res, next) => {
   // Iteration #4: Update the drone
   // ... your code here
 });
 
-router.post('/drones/:id/edit', (req, res, next) => {
+router.post("/:id/edit", (req, res, next) => {
   // Iteration #4: Update the drone
   // ... your code here
 });
 
-router.post('/drones/:id/delete', (req, res, next) => {
+router.post("/:id/delete", (req, res, next) => {
   // Iteration #5: Delete the drone
   // ... your code here
 });
